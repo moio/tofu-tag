@@ -1,5 +1,8 @@
 # TabletopGames.ai TAG AI Framework Deployment
 
+![chameleon-small](https://github.com/user-attachments/assets/793b6e36-a0d7-44ba-91ec-0c9aaa033d96)
+
+
 This project contains scripts to deploy the [TabletopGames.ai TAG](https://tabletopgames.ai/) framework on [SUSE AI](https://www.suse.com/products/ai/): an RKE2 Kubernetes cluster based on openSUSE, running on AWS, with GPU support using the NVIDIA GPU Operator.
 
 ## Requirements
