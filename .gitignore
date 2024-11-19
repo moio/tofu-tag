@@ -1,0 +1,14 @@
+# OS related
+.DS_Store
+
+# tofu related
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.*
+config
+*.tfvars
+
+# IDE related
+.idea
+.vscode
