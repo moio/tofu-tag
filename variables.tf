@@ -89,7 +89,7 @@ variable "server_instance_type" {
 
 variable "agent_instance_type" {
   description = "Instance type for the upstream cluster agent nodes"
-  default     = "g5.xlarge" // cheap x86 instance with nVidia GPU
+  default     = "g4dn.xlarge" // cheap x86 instance with nVidia GPU
 }
 
 variable "instance_tags" {
