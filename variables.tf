@@ -16,9 +16,8 @@ variable "availability_zone" {
 }
 
 variable "bastion_host_ami" {
-  description = "AMI ID"
-  default     = "ami-0ec53db9869a40787"
-  // openSUSE-Leap-15-6-v20241113-hvm-ssd-arm64-a516e959-df54-4035-bb1a-63599b7a6df9
+  description = "AMI ID for the bastion host, or null to use the latest openSUSE 15.6 ARM image in your region"
+  default     = null
 }
 
 variable "ssh_public_key_path" {
@@ -103,9 +102,9 @@ variable "instance_tags" {
 }
 
 variable "ami" {
-  description = "AMI for upstream cluster nodes"
+  description = "AMI ID for the cluster nodes, or null to use the latest openSUSE 15.6 x86 image in your region"
   type        = string
-  default     = "ami-0d735f6a4b1d5f5f5" // openSUSE-Leap-15-6-v20241113-hvm-ssd-x86_64-5535c495-72d4-4355-b169-54ffa874f849
+  default     = null
 }
 
 variable "project_name" {
