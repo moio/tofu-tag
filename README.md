@@ -30,5 +30,10 @@ export KUBECONFIG=`pwd`/config/cluster.yaml
 k9s
 ```
 
+## Utilities
+
+- destroy all infrastructure created by this project: `destroy.sh`
+- destroy all VMs and redeploy them: `taint-nodes.sh && deploy.sh`
+
 ## About
 This project was created during SUSE's HackWeek 24 open source hackathon. For more information, visit the [HackWeek project page](https://hackweek.opensuse.org/24/projects/suse-ai-meets-the-game-board).
