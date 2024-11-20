@@ -106,7 +106,9 @@ variable "ami" {
   type        = string
 
   # HACK: latest CUDA (12.6 Update 1) only supports an outdated (open)SUSE kernel (6.4.0-150600.21)
-  # Using later kernels such as the current 6.4.0-150600.23 breaks CUDA
+  # see https://docs.nvidia.com/cuda/archive/12.4.1/cuda-installation-guide-linux/index.html#system-requirements
+  #
+  # Using later kernels (such as the current 6.4.0-150600.23) breaks CUDA
   # As a workaround, set an outdated image that that ships with kernel 6.4.0-150600.21
   # Note: https://pint.suse.com/?resource=images&csp=amazon&search=15-6 can be used to find AMIs in other regions
   default     = "ami-07ff38c9d82129423"
