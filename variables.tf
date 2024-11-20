@@ -104,7 +104,19 @@ variable "instance_tags" {
 variable "ami" {
   description = "AMI ID for the cluster nodes, or null to use the latest openSUSE 15.6 x86 image in your region"
   type        = string
-  default     = null
+
+  # HACK: latest CUDA (12.6 Update 1) only supports an outdated (open)SUSE kernel (6.4.0-150600.21)
+  # Using later kernels such as the current 6.4.0-150600.23 breaks CUDA
+  # As a workaround, set an outdated image that that ships with kernel 6.4.0-150600.21
+  # Note: https://pint.suse.com/?resource=images&csp=amazon&search=15-6 can be used to find AMIs in other regions
+  default     = "ami-07ff38c9d82129423"
+}
+
+variable "driver_version" {
+  description = "Version of the nVidia driver to use"
+
+  # HACK: work around version conflicts per https://documentation.suse.com/suse-ai/1.0/html/NVIDIA-GPU-driver-on-SL-Micro/index.html#nvidia-gpu-pre-install-version-mismatch
+  default = "550.100"
 }
 
 variable "project_name" {
