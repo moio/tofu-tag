@@ -12,7 +12,7 @@ toolkit:
   - name: CONTAINERD_SET_AS_DEFAULT
     value: "true"
 
-# work around https://github.com/NVIDIA/gpu-operator/issues/569
+# HACK: work around https://github.com/NVIDIA/gpu-operator/issues/569
 validator:
   driver:
     env:
