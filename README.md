@@ -19,12 +19,18 @@ git clone https://github.com/moio/tofu-tag.git
 cd tofu-tag
 ```
 
-2. Initialize and apply the Tofu configuration:
+2. Get access to AWS through your profile and set the profile name so that OpenTofu will see it:
+```sh
+aws sso login --profile MY_PROFILE_NAME_HERE
+export TF_VAR_aws_profile=MY_PROFILE_NAME_HERE
+```
+
+3. Initialize and apply the Tofu configuration:
 ```sh
 ./deploy.sh
 ```
 
-3. Access the Kubernetes cluster:
+4. Access the Kubernetes cluster:
 ```sh
 export KUBECONFIG=`pwd`/config/cluster.yaml
 k9s
