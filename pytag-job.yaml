@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pytag-job
+spec:
+  template:
+    metadata:
+      name: pytag-job
+    spec:
+      containers:
+        - name: pytag-container
+          image: ghcr.io/moio/pytag:latest
+          command: ["python3.11", "/PyTAG/examples/ppo-lstm.py", "--cuda", "--gpu-id=0"]
+          resources:
+            limits:
+              nvidia.com/gpu: "1" # Request 1 GPU
+      restartPolicy: Never

@@ -30,10 +30,14 @@ export TF_VAR_aws_profile=MY_PROFILE_NAME_HERE
 ./deploy.sh
 ```
 
-4. Access the Kubernetes cluster:
+4. Access the newly created, nVidia-enabled Kubernetes cluster:
 ```sh
 export KUBECONFIG=`pwd`/config/cluster.yaml
-k9s
+```
+
+5. Run the PyTAG example job:
+```sh
+kubectl apply -f pytag-job.yaml
 ```
 
 ## Utilities
